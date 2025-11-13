@@ -1,43 +1,66 @@
-import { useState } from 'react'
-import Background from './components/Background.jsx'
-import Bouquet from './components/Bouquet.jsx'
-import Letter from './components/Letter.jsx'
+import { useState } from "react";
+import Bouquet from "./components/Bouquet";
+import Letter from "./components/Letter";
+import PetalRain from "./components/PetalRain";
 
 export default function App() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
+  const [rain, setRain] = useState(false);
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-rose-50 via-pink-50 to-white">
-      <Background />
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-10">
-        <h1 className="font-display text-5xl md:text-6xl text-rose-500 drop-shadow-sm mb-6">
-          Para ti 💖
-        </h1>
+    <div className="min-h-screen bg-[#0a1129] text-white flex flex-col items-center p-4">
 
-        <p className="text-center text-slate-600 max-w-xl mb-8">
-          Un pequeño detalle hecho con mucho cariño.  
-          Toca la carta para abrirla y leer mi mensaje.
-        </p>
+      {/* TÍTULO */}
+      <div className="bg-pink-500 px-6 py-3 rounded-xl mt-4 shadow-lg shadow-pink-400/30">
+        <h1 className="text-2xl font-bold text-white">A Special Bouquet ✨</h1>
+      </div>
 
-        <div className="w-full max-w-2xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-          <div className="order-2 md:order-1">
-            <Letter
-              isOpen={open}
-              onToggle={() => setOpen(v => !v)}
-              to="Naye"
-              message={`Gracias por estar, por tu luz y por tu sonrisa.\n\nEste ramo es para recordarte lo especial que eres para mí.`}
-              from="Con cariño, Lázaro"
-            />
-          </div>
-          <div className="order-1 md:order-2">
-            <Bouquet />
-          </div>
+      <p className="mt-2 text-pink-200 text-sm">
+        hecho con cariño — 100% interactivo y listo para móvil
+      </p>
+
+      {/* CONTENEDOR DEL RAMO */}
+      <div className="mt-6 bg-[#0f172a] p-6 rounded-3xl shadow-2xl max-w-[420px] w-full border border-white/10 backdrop-blur-md">
+        <div className="flex justify-center">
+          <Bouquet />
         </div>
 
-        <footer className="mt-10 text-xs text-slate-500">
-          Hecho con React, Tailwind y Framer Motion 💐
-        </footer>
-      </section>
-    </main>
-  )
+        {/* BOTÓN CARTA */}
+        <div className="flex justify-center mt-4">
+          <button
+            onClick={() => setOpen(true)}
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg"
+          >
+            Abrir carta ✉️
+          </button>
+        </div>
+      </div>
+
+      {/* CARTA ❤️ */}
+      {open && (
+        <div className="mt-6 max-w-[420px] w-full bg-[#0f172a] border border-white/10 p-4 rounded-2xl shadow-xl">
+          <Letter onClose={() => setOpen(false)} />
+
+          <div className="mt-4 flex justify-evenly">
+            <button
+              onClick={() => setRain(true)}
+              className="bg-pink-500 px-4 py-2 rounded-lg text-white hover:bg-pink-600 shadow-md"
+            >
+              Lanzar pétalos 🌸
+            </button>
+
+            <button
+              onClick={() => setOpen(true)}
+              className="bg-blue-500 px-4 py-2 rounded-lg text-white hover:bg-blue-600 shadow-md"
+            >
+              Abrir carta ✉️
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* PÉTALOS */}
+      {rain && <PetalRain />}
+    </div>
+  );
 }
