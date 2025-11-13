@@ -9,3 +9,17 @@ export default {
   },
   plugins: [],
 }
+
+module.exports = {
+  theme: {
+    extend: {
+      rotate: {
+        'x-180': '180deg',
+      },
+      transform: {
+        'preserve-3d': 'preserve-3d',
+      }
+    }
+  }
+}
+

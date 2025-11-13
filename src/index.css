@@ -1,31 +1,130 @@
 @import "tailwindcss";
 
-@keyframes fall {
-  0% {
-    transform: translateY(-20px) rotate(0deg);
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(120vh) rotate(360deg);
-    opacity: 0;
-  }
+@font-face {
+  font-family: "InterVar";
+  src: local("Inter"), local("InterVar");
+  font-display: swap;
 }
 
-.animate-fall {
-  animation-name: fall;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+:root {
+  --safe-area-bottom: env(safe-area-inset-bottom);
 }
 
-@keyframes float {
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: InterVar, ui-sans-serif, system-ui, -apple-system, Segoe UI,
+    Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background-color: #0b1020;
+}
+
+/* ====== Animación flotante del ramo (si no la tenías) ====== */
+@keyframes float-bouquet {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
 
 .animate-float {
-  animation: float 4s ease-in-out infinite;
+  animation: float-bouquet 4s ease-in-out infinite;
 }
+
+/* ====== Carta / Sobre animado ====== */
+
+.love-card-wrapper {
+  animation: love-card-pop 0.5s ease-out;
+}
+
+@keyframes love-card-pop {
+  0% {
+    transform: translateY(20px) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.love-envelope-container {
+  position: relative;
+  width: 280px;
+  height: 190px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+/* Cuerpo del sobre */
+.love-envelope {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f9e0d9, #f4c0c7);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+/* Parte baja del sobre */
+.love-envelope-body {
+  position: absolute;
+  inset: 30% 0 0 0;
+  background: linear-gradient(135deg, #fefefe, #f5d6da);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Solapa del sobre */
+.love-envelope-flap {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #f7c0cc, #f08ab4);
+  clip-path: polygon(0 0, 100% 0, 50% 70%);
+  transform-origin: top center;
+  animation: love-flap-open 0.8s ease-in-out forwards;
+}
+
+/* Carta interior */
+.love-letter-sheet {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 18%;
+  transform: translateY(60%);
+  opacity: 0;
+  animation: love-letter-slide 0.9s 0.35s ease-out forwards;
+  z-index: 5;
+}
+
+/* Animación de la solapa */
+@keyframes love-flap-open {
+  0% {
+    transform: rotateX(0deg);
+  }
+  60% {
+    transform: rotateX(-150deg);
+  }
+  100% {
+    transform: rotateX(-160deg);
+  }
+}
+
+/* Animación de la carta saliendo */
+@keyframes love-letter-slide {
+  0% {
+    transform: translateY(60%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
+}
+
+/* Para que la rotación X se vea bien */
+.love-envelope,
+.love-envelope-flap {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+

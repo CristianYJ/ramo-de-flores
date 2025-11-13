@@ -1,66 +1,53 @@
 import { useState } from "react";
-import Bouquet from "./components/Bouquet";
-import Letter from "./components/Letter";
-import PetalRain from "./components/PetalRain";
+import GalacticBouquet from "./components/Bouquet"; // o Bouquet si así se llama tu componente
+import AnimatedLetter from "./components/AnimatedLetter";
+import "./index.css";
 
 export default function App() {
-  const [open, setOpen] = useState(false);
-  const [rain, setRain] = useState(false);
+  const [showLetter, setShowLetter] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0a1129] text-white flex flex-col items-center p-4">
+    <div className="flex flex-col items-center min-h-screen bg-[#0f172a] text-pink-100 pb-16">
+      {/* Título */}
+      <h1 className="text-3xl font-bold text-pink-100 mb-2 mt-6 bg-pink-600 px-8 py-3 rounded-2xl shadow-lg">
+        A Special Bouquet ✨
+      </h1>
 
-      {/* TÍTULO */}
-      <div className="bg-pink-500 px-6 py-3 rounded-xl mt-4 shadow-lg shadow-pink-400/30">
-        <h1 className="text-2xl font-bold text-white">A Special Bouquet ✨</h1>
-      </div>
-
-      <p className="mt-2 text-pink-200 text-sm">
+      <p className="text-sm mb-6 text-pink-200">
         hecho con cariño — 100% interactivo y listo para móvil
       </p>
 
-      {/* CONTENEDOR DEL RAMO */}
-      <div className="mt-6 bg-[#0f172a] p-6 rounded-3xl shadow-2xl max-w-[420px] w-full border border-white/10 backdrop-blur-md">
-        <div className="flex justify-center">
-          <Bouquet />
+      {/* Tarjeta del ramo */}
+      <div className="max-w-[420px] w-full bg-[#050b1b] rounded-3xl shadow-2xl border border-white/10 px-6 pt-6 pb-4">
+        <div className="flex justify-center mb-4">
+          <GalacticBouquet />
         </div>
 
-        {/* BOTÓN CARTA */}
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center">
           <button
-            onClick={() => setOpen(true)}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg"
+            onClick={() => setShowLetter(true)}
+            className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-md transition flex items-center gap-2"
           >
-            Abrir carta ✉️
+            Abrir carta 💌
           </button>
         </div>
       </div>
 
-      {/* CARTA ❤️ */}
-      {open && (
-        <div className="mt-6 max-w-[420px] w-full bg-[#0f172a] border border-white/10 p-4 rounded-2xl shadow-xl">
-          <Letter onClose={() => setOpen(false)} />
+      {/* Carta animada (sobre que se abre) */}
+      {showLetter && (
+        <AnimatedLetter onClose={() => setShowLetter(false)}>
+          <p className="text-gray-800">
+            Para ti, con todo mi cariño. Quise regalarte un jardín de estrellas
+            convertido en flores — cada pétalo es un “gracias” y cada brillo,
+            un “te quiero”. 🌸
+          </p>
 
-          <div className="mt-4 flex justify-evenly">
-            <button
-              onClick={() => setRain(true)}
-              className="bg-pink-500 px-4 py-2 rounded-lg text-white hover:bg-pink-600 shadow-md"
-            >
-              Lanzar pétalos 🌸
-            </button>
-
-            <button
-              onClick={() => setOpen(true)}
-              className="bg-blue-500 px-4 py-2 rounded-lg text-white hover:bg-blue-600 shadow-md"
-            >
-              Abrir carta ✉️
-            </button>
-          </div>
-        </div>
+          <p className="mt-4 text-gray-800">
+            Que este ramo acompañe tus días y te recuerde lo esencial que eres.
+            Gracias por ser tú. 💖
+          </p>
+        </AnimatedLetter>
       )}
-
-      {/* PÉTALOS */}
-      {rain && <PetalRain />}
     </div>
   );
 }
