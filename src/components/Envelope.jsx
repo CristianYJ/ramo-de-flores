@@ -65,7 +65,7 @@ export default function Envelope({ children, isOpen, onOpen, onClose }) {
             animate={{ y: -160, opacity: 1, scale: 1 }}
             exit={{ y: 80, opacity: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-[290px] z-20"
+            className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] z-20"
           >
             <button
               onClick={onClose}
@@ -83,9 +83,17 @@ export default function Envelope({ children, isOpen, onOpen, onClose }) {
               </svg>
             </button>
 
-            <div className="bg-white p-6 rounded-2xl shadow-2xl border border-gray-200 text-gray-800 love-card-wrapper">
+            {/* === CARTA CON SCROLL === */}
+            <div
+              className="
+                bg-white p-6 rounded-2xl shadow-2xl border border-gray-200 
+                text-gray-800 love-card-wrapper
+                max-h-[340px] overflow-y-auto scroll-smooth soft-scroll
+              "
+            >
               {children}
             </div>
+
           </motion.div>
         )}
       </AnimatePresence>

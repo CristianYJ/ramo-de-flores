@@ -197,3 +197,86 @@ body {
   0% { transform: translateY(20px) scale(0.9); opacity: 0; }
   100% { transform: translateY(0) scale(1); opacity: 1; }
 }
+
+/* ===========================
+   PETALOS CAYENDO
+   =========================== */
+.petal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 80;
+}
+
+.petal {
+  position: absolute;
+  top: -10%;
+  opacity: 0.9;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(120vh) rotate(360deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+
+.voice-button {
+  margin-top: 0.5rem;
+  padding: 0.7rem 2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff8ccf, #ff4fa3);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(255, 77, 148, 0.4);
+  transition: all 0.2s ease;
+}
+
+.voice-button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.voice-button:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+/* === Scroll fino y elegante dentro de la carta === */
+.soft-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #f9a8d4 #ffffff;
+}
+
+.soft-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.soft-scroll::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.soft-scroll::-webkit-scrollbar-thumb {
+  background: #f9a8d4;
+  border-radius: 10px;
+}
+
+.soft-scroll::-webkit-scrollbar-thumb:hover {
+  background: #f472b6;
+}
+

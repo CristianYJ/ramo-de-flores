@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import petal from "../assets/petal.png";
 
 export default function PetalRain() {
   const [petals, setPetals] = useState([]);
@@ -8,33 +9,33 @@ export default function PetalRain() {
       setPetals((prev) => [
         ...prev,
         {
-          id: crypto.randomUUID(),
+          id: Math.random(),
           left: Math.random() * 100,
-          size: 20 + Math.random() * 15,
-          duration: 4 + Math.random() * 3,
-          delay: Math.random() * 2,
+          size: 18 + Math.random() * 25,
+          duration: 6 + Math.random() * 6,
+          rotation: Math.random() * 360,
         },
       ]);
-    }, 300);
+    }, 600);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 overflow-hidden">
+    <div className="petal-container">
       {petals.map((p) => (
-        <span
+        <img
           key={p.id}
-          className="absolute text-pink-300 opacity-80 drop-shadow-lg animate-fall"
+          src={petal}
+          className="petal"
           style={{
             left: `${p.left}%`,
-            fontSize: `${p.size}px`,
+            width: p.size,
+            height: p.size,
             animationDuration: `${p.duration}s`,
-            animationDelay: `${p.delay}s`,
+            transform: `rotate(${p.rotation}deg)`
           }}
-        >
-          🌸
-        </span>
+        />
       ))}
     </div>
   );
