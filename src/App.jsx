@@ -31,7 +31,7 @@ export default function App() {
             whitespace-pre-wrap
           "
         >
-          Para ti, Lariza. Porque mi corazón siempre vuelve a ti. ❤️
+          Para ti, Lariza. Porque a pesar de todo siempre te quiero mucho. ❤️
         </h1>
 
         {/* Subrayado animado */}
@@ -39,7 +39,7 @@ export default function App() {
 
         {/* Nota adicional */}
         <p className="text-pink-300 text-sm mt-3 opacity-90 italic">
-          Siempre tuyo. Siempre contigo. 💗
+          Como te quiero mi lindota. 💗
         </p>
 
         {/* Brillitos */}
