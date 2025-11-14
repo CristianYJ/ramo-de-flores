@@ -10,121 +10,139 @@
   --safe-area-bottom: env(safe-area-inset-bottom);
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
 }
 
 body {
   font-family: InterVar, ui-sans-serif, system-ui, -apple-system, Segoe UI,
     Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  background-color: #0b1020;
+  background: radial-gradient(circle at top, #182339 0%, #050816 55%, #020617 100%);
+  color: #fdf2f8;
+  margin: 0;
 }
 
-/* ====== Animación flotante del ramo (si no la tenías) ====== */
+/* ====== CONTENEDOR PRINCIPAL ====== */
+.app-shell {
+  min-height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem calc(2.5rem + var(--safe-area-bottom));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ====== HEADER ====== */
+.app-header-title {
+  font-weight: 800;
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #ff4fa3, #ff9a5f);
+  color: white;
+  border-radius: 999px;
+  padding: 0.7rem 2.6rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+  text-align: center;
+}
+
+.app-subtitle {
+  font-size: 0.8rem;
+  color: #fecdd3;
+  opacity: 0.95;
+  text-align: center;
+}
+
+/* ====== RAMO ====== */
+
+.bouquet-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 1.8rem;
+  background: radial-gradient(circle at top, #020617 0%, #020617 40%, #000 100%);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.75);
+  padding: 1.6rem 1.4rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bouquet-inner {
+  border-radius: 1.4rem;
+  background: #020617;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  padding: 1.2rem;
+}
+
 @keyframes float-bouquet {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-float {
   animation: float-bouquet 4s ease-in-out infinite;
 }
 
-/* ====== Carta / Sobre animado ====== */
+/* ====== BOTÓN PRINCIPAL ====== */
+
+.primary-button {
+  display: flex;
+  justify-content: center;
+  padding: 0.6rem 1.9rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #f973b8, #ec4899);
+  color: white;
+  box-shadow: 0 14px 30px rgba(236, 72, 153, 0.55);
+  transition: 0.15s ease;
+}
+
+.primary-button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.primary-button:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* ====== SOBRE ====== */
+
+.envelope-section {
+  width: 100%;
+  max-width: 320px;
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes idle-envelope {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.01); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.envelope-idle {
+  animation: idle-envelope 4.5s ease-in-out infinite;
+}
+
+/* ====== CARTA ====== */
 
 .love-card-wrapper {
   animation: love-card-pop 0.5s ease-out;
 }
 
 @keyframes love-card-pop {
-  0% {
-    transform: translateY(20px) scale(0.9);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
+  0% { transform: translateY(20px) scale(0.9); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
 }
-
-.love-envelope-container {
-  position: relative;
-  width: 280px;
-  height: 190px;
-  margin: 0 auto;
-  perspective: 1000px;
-}
-
-/* Cuerpo del sobre */
-.love-envelope {
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #f9e0d9, #f4c0c7);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
-}
-
-/* Parte baja del sobre */
-.love-envelope-body {
-  position: absolute;
-  inset: 30% 0 0 0;
-  background: linear-gradient(135deg, #fefefe, #f5d6da);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
-/* Solapa del sobre */
-.love-envelope-flap {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #f7c0cc, #f08ab4);
-  clip-path: polygon(0 0, 100% 0, 50% 70%);
-  transform-origin: top center;
-  animation: love-flap-open 0.8s ease-in-out forwards;
-}
-
-/* Carta interior */
-.love-letter-sheet {
-  position: absolute;
-  left: 8%;
-  right: 8%;
-  top: 18%;
-  transform: translateY(60%);
-  opacity: 0;
-  animation: love-letter-slide 0.9s 0.35s ease-out forwards;
-  z-index: 5;
-}
-
-/* Animación de la solapa */
-@keyframes love-flap-open {
-  0% {
-    transform: rotateX(0deg);
-  }
-  60% {
-    transform: rotateX(-150deg);
-  }
-  100% {
-    transform: rotateX(-160deg);
-  }
-}
-
-/* Animación de la carta saliendo */
-@keyframes love-letter-slide {
-  0% {
-    transform: translateY(60%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(-10%);
-    opacity: 1;
-  }
-}
-
-/* Para que la rotación X se vea bien */
-.love-envelope,
-.love-envelope-flap {
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-}
-
