@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* ========================= */
+/*     TIPOGRAFÍA GLOBAL     */
+/* ========================= */
 @font-face {
   font-family: "InterVar";
   src: local("Inter"), local("InterVar");
@@ -24,7 +27,9 @@ body {
   margin: 0;
 }
 
-/* ====== CONTENEDOR PRINCIPAL ====== */
+/* ========================= */
+/*     CONTENEDOR PRINCIPAL  */
+/* ========================= */
 .app-shell {
   min-height: 100vh;
   max-width: 480px;
@@ -36,7 +41,9 @@ body {
   gap: 1.5rem;
 }
 
-/* ====== HEADER ====== */
+/* ========================= */
+/*           HEADER          */
+/* ========================= */
 .app-header-title {
   font-weight: 800;
   font-size: 1.6rem;
@@ -48,6 +55,41 @@ body {
   text-align: center;
 }
 
+/* ========================= */
+/*           SUBTÍTULO       */
+/* ========================= */
+.romantic-text {
+  display: inline-block;
+  overflow: hidden;
+
+  /* ⭐ FIX multilínea (ya no se corta) */
+  white-space: normal;
+  width: 100%;
+
+  border-right: 0.12em solid rgba(255, 255, 255, 0.4);
+
+  animation:
+    typing-multiline 3.5s steps(60, end),
+    blink .75s step-end infinite;
+}
+
+/* Animación para multilínea */
+@keyframes typing-multiline {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+/* Cursor parpadeante */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
 .app-subtitle {
   font-size: 0.8rem;
   color: #fecdd3;
@@ -55,7 +97,9 @@ body {
   text-align: center;
 }
 
-/* ====== RAMO ====== */
+/* ========================= */
+/*          RAMO             */
+/* ========================= */
 
 .bouquet-card {
   width: 100%;
@@ -90,7 +134,9 @@ body {
   animation: float-bouquet 4s ease-in-out infinite;
 }
 
-/* ====== BOTÓN PRINCIPAL ====== */
+/* ========================= */
+/*     BOTÓN PRINCIPAL       */
+/* ========================= */
 
 .primary-button {
   display: flex;
@@ -114,7 +160,9 @@ body {
   transform: translateY(1px) scale(0.98);
 }
 
-/* ====== SOBRE ====== */
+/* ========================= */
+/*           SOBRE           */
+/* ========================= */
 
 .envelope-section {
   width: 100%;
@@ -126,6 +174,7 @@ body {
   align-items: center;
 }
 
+/* animación suave del sobre */
 @keyframes idle-envelope {
   0% { transform: translateY(0) scale(1); }
   50% { transform: translateY(-4px) scale(1.01); }
@@ -136,7 +185,9 @@ body {
   animation: idle-envelope 4.5s ease-in-out infinite;
 }
 
-/* ====== CARTA ====== */
+/* ========================= */
+/*            CARTA          */
+/* ========================= */
 
 .love-card-wrapper {
   animation: love-card-pop 0.5s ease-out;

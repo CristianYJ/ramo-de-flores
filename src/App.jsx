@@ -9,10 +9,46 @@ export default function App() {
   return (
     <div className="app-shell">
 
-      <h1 className="app-header-title">A Special Bouquet ✨</h1>
+      {/* HEADER SUPER ROMÁNTICO */}
+      <div
+        className="
+          relative mx-auto mt-8 px-6 py-4 
+          max-w-[90%] md:max-w-[60%] 
+          text-center select-none
+
+          /* Animaciones */
+          animate-soft-float animate-soft-glow animate-soft-beat
+        "
+      >
+        {/* Texto con animación de escritura */}
+        <h1
+          className="
+            romantic-text 
+            text-2xl md:text-3xl 
+            font-bold 
+            text-pink-200 
+            leading-snug
+            whitespace-pre-wrap
+          "
+        >
+          Para ti, Lariza. Porque mi corazón siempre vuelve a ti. ❤️
+        </h1>
+
+        {/* Subrayado animado */}
+        <div className="romantic-underline mx-auto mt-2"></div>
+
+        {/* Nota adicional */}
+        <p className="text-pink-300 text-sm mt-3 opacity-90 italic">
+          Siempre tuyo. Siempre contigo. 💗
+        </p>
+
+        {/* Brillitos */}
+        <div className="sparkle sparkle-1"></div>
+        <div className="sparkle sparkle-2"></div>
+        <div className="sparkle sparkle-3"></div>
+      </div>
 
       <p className="app-subtitle">
-        hecho con cariño — 100% interactivo y listo para móvil
       </p>
 
       <section className="bouquet-card">
