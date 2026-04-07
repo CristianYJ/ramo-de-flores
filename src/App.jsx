@@ -42,15 +42,15 @@ export default function App() {
             whitespace-pre-wrap
           "
         >
-          Para ti, Lariza.
+          Para mi preciosa Ale
           <br />
-          Porque a pesar de todo siempre te quiero mucho. ❤️
+          Hecho con todo mi corazón
         </h1>
 
         <div className="romantic-underline mx-auto mt-3"></div>
 
         <p className="text-pink-300 text-sm mt-3 opacity-90 italic">
-          Como te quiero mi lindota. 💗
+          Para Valeria Alexandra, la niña más linda
         </p>
 
         {/* Brillitos */}
@@ -78,36 +78,50 @@ export default function App() {
         onClose={() => setIsOpen(false)}
       >
         <>
-           <p>
-    Lariza… de tanto que hemos hablado, a veces siento que ya ni sé qué decirte.  
-    Pero aun así, siempre vuelvo a querer decirte algo bonito, algo verdadero,  
-    porque lo que siento por vos nunca deja de crecer.
-  </p>
+          <p>
+            Ale… a veces me pongo a pensar en vos y me doy cuenta de lo mucho que me gustás.
+            No es algo simple, es de esas cosas que se sienten bonito de verdad,
+            que te sacan una sonrisa sin darte cuenta.
+          </p>
 
-  <p className="mt-4">
-    Esta carta no es más que mis propias palabras, tal como me nacen,  
-    para decirte lo mucho que te quiero, lo mucho que te amo.  
-    Si me pusiera a describir cada cosa que me gusta de vos,  
-    no terminaría nunca.
-  </p>
+          <p className="mt-4">
+            Valeria Alexandra, sos una niña increíblemente especial.
+            Tenés una forma de ser que transmite paz, ternura
+            y algo que no cualquiera tiene.
+            Me encanta cómo sos, cómo hablás
+            y cómo lográs hacerme sentir incluso sin estar cerca.
+          </p>
 
-  <p className="mt-4">
-    Amo tu voz, aunque la he escuchado pocas veces.  
-    Amo la forma en que sos, lo que transmitís, lo que me hacés sentir.  
-    Cada parte de vos tiene algo que me encanta.
-  </p>
+          <p className="mt-4">
+            Este detalle lo hice pensando en vos,
+            como una forma de darte algo mío,
+            algo que aunque no sea físico como quisiera,
+            lleva todo mi cariño y mi intención.
+          </p>
 
-  <p className="mt-4">
-    Este ramo es por todo lo que no puedo darte físicamente.  
-    Es un pedacito de mi esfuerzo, de mi cariño,  
-    para que tengas algo que venga directamente de mí hacia vos.
-  </p>
+          <p className="mt-4">
+            Me gustás muchísimo, Ale.
+            Me gustás de esa forma sincera,
+            de la que nace sin forzar nada,
+            de la que simplemente se siente correcta.
+          </p>
 
-  <p className="mt-4">
-    Lariza, te quiero un montón.  
-    Y Cristian Leandro Rodríguez Vásquez siempre va a quererte un montón.  
-    Te amo muchísimo, mi niña linda. ❤️
-  </p>
+          <p className="mt-4">
+            Y quiero que siempre tengás una forma de encontrarme,
+            por eso te dejo mi número:
+            <br />
+            <span className="font-semibold text-pink-300">
+              [TU NÚMERO AQUÍ]
+            </span>
+          </p>
+
+          <p className="mt-4">
+            Te quiero un montón, Ale.
+            De verdad.
+            Y todo esto es solo una pequeña forma
+            de demostrarte lo importante que sos para mí.
+            ❤️
+          </p>
         </>
       </Envelope>
 
