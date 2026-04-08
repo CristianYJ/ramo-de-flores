@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import GalacticBouquet from "./components/Bouquet";
 import Envelope from "./components/Envelope";
-import audioFile from "./assets/mensaje.mp3";
 import gatoVideo from "./assets/GATO.mp4";
 import "./index.css";
 
