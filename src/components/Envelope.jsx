@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Envelope({ children, isOpen, onOpen, onClose }) {
   return (
-    <div className="envelope-section">
+    <div className="envelope-section relative flex flex-col items-center">
 
       {/* Botón para abrir carta */}
       {!isOpen && (
@@ -13,10 +13,10 @@ export default function Envelope({ children, isOpen, onOpen, onClose }) {
 
       {/* Sobre */}
       <motion.div
-        className={`relative w-[290px] h-[200px] drop-shadow-xl ${
+        className={`relative w-[320px] h-[220px] drop-shadow-xl ${
           !isOpen ? "envelope-idle" : ""
         }`}
-        animate={isOpen ? { scale: 0.95, y: 25 } : { scale: 1, y: 0 }}
+        animate={isOpen ? { scale: 0.95, y: 35 } : { scale: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <motion.svg
@@ -61,15 +61,15 @@ export default function Envelope({ children, isOpen, onOpen, onClose }) {
         {isOpen && (
           <motion.div
             key="card"
-            initial={{ y: 60, opacity: 0, scale: 0.98 }}
-            animate={{ y: -160, opacity: 1, scale: 1 }}
-            exit={{ y: 80, opacity: 0 }}
+            initial={{ y: 80, opacity: 0, scale: 0.96 }}
+            animate={{ y: -220, opacity: 1, scale: 1 }}
+            exit={{ y: 80, opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] z-20"
+            className="absolute left-1/2 top-0 -translate-x-1/2 w-[360px] sm:w-[420px] z-20"
           >
             <button
               onClick={onClose}
-              className="absolute -top-5 -right-5 bg-white rounded-full shadow-lg p-2 hover:bg-gray-100 transition"
+              className="absolute -top-4 -right-4 bg-white/95 rounded-full shadow-lg p-3 hover:bg-gray-100 transition z-30"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -79,21 +79,29 @@ export default function Envelope({ children, isOpen, onOpen, onClose }) {
                 strokeWidth="2"
                 fill="none"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M6 18L18 6"/>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 6l12 12M6 18L18 6"
+                />
               </svg>
             </button>
 
             {/* === CARTA CON SCROLL === */}
             <div
               className="
-                bg-white p-6 rounded-2xl shadow-2xl border border-gray-200 
+                bg-white/95 backdrop-blur-sm
+                p-7 sm:p-8
+                rounded-[28px]
+                shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+                border border-pink-100
                 text-gray-800 love-card-wrapper
-                max-h-[340px] overflow-y-auto scroll-smooth soft-scroll
+                max-h-[460px] overflow-y-auto scroll-smooth soft-scroll
+                leading-8 text-[1.08rem]
               "
             >
               {children}
             </div>
-
           </motion.div>
         )}
       </AnimatePresence>

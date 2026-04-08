@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import GalacticBouquet from "./components/Bouquet";
 import Envelope from "./components/Envelope";
-import PetalRain from "./components/PetalRain";
 import audioFile from "./assets/mensaje.mp3";
 import "./index.css";
 
@@ -25,23 +24,12 @@ export default function App() {
   };
 
   return (
-    <div className="app-shell relative overflow-hidden">
-
-      {/* ====== FONDO DECORATIVO ====== */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[520px] h-[520px] rounded-full bg-pink-500/10 blur-[130px]"></div>
-        <div className="absolute top-[280px] left-[10%] w-[220px] h-[220px] rounded-full bg-fuchsia-500/10 blur-[100px]"></div>
-        <div className="absolute top-[180px] right-[10%] w-[200px] h-[200px] rounded-full bg-purple-500/10 blur-[100px]"></div>
-        <div className="absolute bottom-[120px] left-1/2 -translate-x-1/2 w-[420px] h-[420px] rounded-full bg-pink-400/10 blur-[120px]"></div>
-      </div>
-
-      {/* ====== LLUVIA DE PÉTALOS ====== */}
-      <PetalRain />
+    <div className="app-shell">
 
       {/* ====== HEADER ====== */}
       <div
         className="
-          romantic-header relative z-10 mx-auto mt-8 px-6 py-4 text-center select-none
+          romantic-header relative mx-auto mt-8 px-6 py-4 text-center select-none
         "
       >
         <h1
@@ -72,73 +60,71 @@ export default function App() {
       </div>
 
       {/* ====== BOTÓN DE AUDIO ====== */}
-      <div className="relative z-10 flex justify-center">
-        <button onClick={toggleAudio} className="voice-button my-2">
-          {isPlaying ? "⏸️ Pausar mensaje" : "🎧 Escuchar mi mensaje de voz 💞"}
-        </button>
-      </div>
+      <button onClick={toggleAudio} className="voice-button my-2">
+        {isPlaying ? "⏸️ Pausar mensaje" : "🎧 Escuchar mi mensaje de voz 💞"}
+      </button>
 
       {/* ====== RAMO ====== */}
-      <section className="bouquet-card relative z-10">
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="w-72 h-72 rounded-full bg-pink-500/20 blur-[90px]"></div>
-        </div>
-
-        <div className="bouquet-inner animate-float flex justify-center relative z-10">
+      <section className="bouquet-card">
+        <div className="bouquet-inner animate-float flex justify-center">
           <GalacticBouquet />
         </div>
       </section>
 
       {/* ====== SOBRE Y CARTA ====== */}
-      <div className="relative z-10">
-        <Envelope
-          isOpen={isOpen}
-          onOpen={() => setIsOpen(true)}
-          onClose={() => setIsOpen(false)}
-        >
-          <>
-            <p>
-              Ale… quise hacerte este detalle porque en estos días me ha gustado mucho hablar con vos.
-              Tenés una forma bien bonita de ser que se siente sincera, tranquila y especial.
-            </p>
+      <Envelope
+        isOpen={isOpen}
+        onOpen={() => setIsOpen(true)}
+        onClose={() => setIsOpen(false)}
+      >
+        <>
+          <p>
+            Ale… a veces me pongo a pensar en vos y me doy cuenta de lo mucho que me gustás.
+            No es algo simple, es de esas cosas que se sienten bonito de verdad,
+            que te sacan una sonrisa sin darte cuenta.
+          </p>
 
-            <p className="mt-4">
-              No quería hacer algo exagerado,
-              solo algo lindo que pudiera sacarte una sonrisa
-              y que de alguna manera te hiciera sentir lo bonito que es conocerte.
-            </p>
+          <p className="mt-4">
+            Valeria Alexandra, sos una niña increíblemente especial.
+            Tenés una forma de ser que transmite paz, ternura
+            y algo que no cualquiera tiene.
+            Me encanta cómo sos, cómo hablás
+            y cómo lográs hacerme sentir incluso sin estar cerca.
+          </p>
 
-            <p className="mt-4">
-              Me gusta mucho la manera en que hablás,
-              tu energía
-              y lo natural que se siente todo cuando coincido con vos.
-              Sos de esas personas que dejan una sensación bonita sin esfuerzo.
-            </p>
+          <p className="mt-4">
+            Este detalle lo hice pensando en vos,
+            como una forma de darte algo mío,
+            algo que aunque no sea físico como quisiera,
+            lleva todo mi cariño y mi intención.
+          </p>
 
-            <p className="mt-4">
-              Este detalle lo hice pensando en vos,
-              con cariño,
-              como una forma sencilla de expresarte que disfruto conocerte
-              y que me parecés una niña muy especial.
-            </p>
+          <p className="mt-4">
+            Me gustás muchísimo, Ale.
+            Me gustás de esa forma sincera,
+            de la que nace sin forzar nada,
+            de la que simplemente se siente correcta.
+          </p>
 
-            <p className="mt-4">
-              Y quiero que siempre tengás una forma de encontrarme,
-              por eso te dejo mi número:
-              <br />
-              <span className="font-semibold text-pink-300">
-                [TU NÚMERO AQUÍ]
-              </span>
-            </p>
+          <p className="mt-4">
+            Y quiero que siempre tengás una forma de encontrarme,
+            por eso te dejo mi número:
+            <br />
+            <span className="font-semibold text-pink-300">
+              [TU NÚMERO AQUÍ]
+            </span>
+          </p>
 
-            <p className="mt-4">
-              Espero de corazón que te guste este pequeño detalle.
-              Está hecho con mucho cariño para vos.
-              ❤️
-            </p>
-          </>
-        </Envelope>
-      </div>
+          <p className="mt-4">
+            Te quiero un montón, Ale.
+            De verdad.
+            Y todo esto es solo una pequeña forma
+            de demostrarte lo importante que sos para mí.
+            ❤️
+          </p>
+        </>
+      </Envelope>
+
     </div>
   );
 }
