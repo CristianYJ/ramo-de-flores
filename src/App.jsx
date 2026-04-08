@@ -79,31 +79,28 @@ export default function App() {
       >
         <>
           <p>
-            Ale… a veces me pongo a pensar en vos y me doy cuenta de lo mucho que me gustás.
-            No es algo simple, es de esas cosas que se sienten bonito de verdad,
-            que te sacan una sonrisa sin darte cuenta.
+            Ale… quise hacerte este detalle porque en estos días me ha gustado mucho hablar con vos.
+            Tenés una forma bien bonita de ser que se siente sincera, tranquila y especial.
           </p>
 
           <p className="mt-4">
-            Valeria Alexandra, sos una niña increíblemente especial.
-            Tenés una forma de ser que transmite paz, ternura
-            y algo que no cualquiera tiene.
-            Me encanta cómo sos, cómo hablás
-            y cómo lográs hacerme sentir incluso sin estar cerca.
+            No quería hacer algo exagerado,
+            solo algo lindo que pudiera sacarte una sonrisa
+            y que de alguna manera te hiciera sentir lo bonito que es conocerte.
+          </p>
+
+          <p className="mt-4">
+            Me gusta mucho la manera en que hablás,
+            tu energía
+            y lo natural que se siente todo cuando coincido con vos.
+            Sos de esas personas que dejan una sensación bonita sin esfuerzo.
           </p>
 
           <p className="mt-4">
             Este detalle lo hice pensando en vos,
-            como una forma de darte algo mío,
-            algo que aunque no sea físico como quisiera,
-            lleva todo mi cariño y mi intención.
-          </p>
-
-          <p className="mt-4">
-            Me gustás muchísimo, Ale.
-            Me gustás de esa forma sincera,
-            de la que nace sin forzar nada,
-            de la que simplemente se siente correcta.
+            con cariño,
+            como una forma sencilla de expresarte que disfruto conocerte
+            y que me parecés una niña muy especial.
           </p>
 
           <p className="mt-4">
@@ -116,10 +113,8 @@ export default function App() {
           </p>
 
           <p className="mt-4">
-            Te quiero un montón, Ale.
-            De verdad.
-            Y todo esto es solo una pequeña forma
-            de demostrarte lo importante que sos para mí.
+            Espero de corazón que te guste este pequeño detalle.
+            Está hecho con mucho cariño para vos.
             ❤️
           </p>
         </>
