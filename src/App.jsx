@@ -84,6 +84,7 @@ export default function App() {
             Hay personas que simplemente tienen una forma especial de estar,
             de hablar y de hacer sentir bien a alguien,
             y vos sos una de ellas.
+            Gracias por hacer mis dias menos aburridos, creeme que cada dia que hablo con vos es lo mejor del mundo.
           </p>
 
           <p className="mt-4">
