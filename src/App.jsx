@@ -43,7 +43,7 @@ export default function App() {
             whitespace-pre-wrap
           "
         >
-          Para Valeria Alexandra
+          Para la preciosota de la Ale
           <br />
           Con mucho cariño
         </h1>
