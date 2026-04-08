@@ -60,10 +60,6 @@ export default function App() {
         <div className="sparkle sparkle-3"></div>
       </div>
 
-      {/* ====== BOTÓN DE AUDIO ====== */}
-      <button onClick={toggleAudio} className="voice-button my-2">
-        {isPlaying ? "⏸️ Pausar mensaje" : "🎧 Escuchar mi mensaje de voz 💞"}
-      </button>
 
       {/* ====== RAMO ====== */}
       <section className="bouquet-card">
