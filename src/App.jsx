@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import GalacticBouquet from "./components/Bouquet";
 import Envelope from "./components/Envelope";
 import audioFile from "./assets/mensaje.mp3";
+import gatoVideo from "./assets/GATO.mp4";
 import "./index.css";
 
 export default function App() {
@@ -130,6 +131,18 @@ export default function App() {
             <br />
             [TU APODO O NOMBRE]
           </p>
+          <div className="mt-6 flex justify-center">
+  <video
+    src={gatoVideo}
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="w-40 max-w-full rounded-2xl shadow-lg"
+  />
+</div>
+
+          
         </>
       </Envelope>
 
