@@ -108,15 +108,6 @@ export default function App() {
           </p>
 
           <p className="mt-4">
-            Y para que siempre tengás una forma de encontrarme,
-            te dejo mi número:
-            <br />
-            <span className="font-semibold text-pink-300">
-              [TU NÚMERO AQUÍ]
-            </span>
-          </p>
-
-          <p className="mt-4">
             Gracias por inspirar algo tan bonito.
             Espero de corazón que este detalle te guste.
             ❤️
@@ -125,7 +116,6 @@ export default function App() {
           <p className="mt-4 italic text-pink-200">
             Con cariño,
             <br />
-            [TU APODO O NOMBRE]
           </p>
           <div className="mt-6 flex justify-center">
   <video
