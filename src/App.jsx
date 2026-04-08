@@ -42,15 +42,15 @@ export default function App() {
             whitespace-pre-wrap
           "
         >
-          Para Valeria Alexandra
+          Para mi preciosa Ale
           <br />
-          Con mucho cariño
+          Hecho con todo mi corazón
         </h1>
 
         <div className="romantic-underline mx-auto mt-3"></div>
 
         <p className="text-pink-300 text-sm mt-3 opacity-90 italic">
-          Un pequeño detalle hecho de corazón
+          Para Valeria Alexandra, la niña más linda
         </p>
 
         {/* Brillitos */}
@@ -79,40 +79,36 @@ export default function App() {
       >
         <>
           <p>
-            Quería hacerte este pequeño detalle porque me parecés una persona muy linda
-            y, en tan poco tiempo, has logrado transmitirme algo muy bonito.
+            Ale… a veces me pongo a pensar en vos y me doy cuenta de lo mucho que me gustás.
+            No es algo simple, es de esas cosas que se sienten bonito de verdad,
+            que te sacan una sonrisa sin darte cuenta.
           </p>
 
           <p className="mt-4">
-            Hay personas que simplemente tienen una forma especial de estar,
-            de hablar y de hacer sentir bien a alguien,
-            y vos sos una de ellas.
+            Valeria Alexandra, sos una niña increíblemente especial.
+            Tenés una forma de ser que transmite paz, ternura
+            y algo que no cualquiera tiene.
+            Me encanta cómo sos, cómo hablás
+            y cómo lográs hacerme sentir incluso sin estar cerca.
           </p>
 
           <p className="mt-4">
-            Me gusta mucho la manera en que sos,
-            tu energía, tu forma de expresarte
-            y lo natural que se siente hablar con vos.
+            Este detalle lo hice pensando en vos,
+            como una forma de darte algo mío,
+            algo que aunque no sea físico como quisiera,
+            lleva todo mi cariño y mi intención.
           </p>
 
           <p className="mt-4">
-            Esto lo hice con mucho cariño,
-            como una forma sencilla pero sincera
-            de demostrarte que disfruto conocerte
-            y que me encanta compartir tiempo con vos,
-            aunque sea a la distancia.
+            Me gustás muchísimo, Ale.
+            Me gustás de esa forma sincera,
+            de la que nace sin forzar nada,
+            de la que simplemente se siente correcta.
           </p>
 
           <p className="mt-4">
-            No quería hacer algo exagerado,
-            solo algo bonito,
-            especial
-            y que pudiera sacarte una sonrisa.
-          </p>
-
-          <p className="mt-4">
-            Y para que siempre tengás una forma de encontrarme,
-            te dejo mi número:
+            Y quiero que siempre tengás una forma de encontrarme,
+            por eso te dejo mi número:
             <br />
             <span className="font-semibold text-pink-300">
               [TU NÚMERO AQUÍ]
@@ -120,15 +116,11 @@ export default function App() {
           </p>
 
           <p className="mt-4">
-            Gracias por inspirar algo tan bonito.
-            Espero de corazón que este detalle te guste.
+            Te quiero un montón, Ale.
+            De verdad.
+            Y todo esto es solo una pequeña forma
+            de demostrarte lo importante que sos para mí.
             ❤️
-          </p>
-
-          <p className="mt-4 italic text-pink-200">
-            Con cariño,
-            <br />
-            [TU APODO O NOMBRE]
           </p>
         </>
       </Envelope>
